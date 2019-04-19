@@ -1,4 +1,4 @@
-"""This program plays a game of Rock, Paper, Scissors between two Players,
+"""This program plays a game of Rock-Paper-Scissors-Lizard-Spock between two Players,
 and reports both Player's scores each round."""
 
 import random
@@ -6,6 +6,7 @@ import random
 import time
 
 
+# 1.5 sec pause is made after the text is printed
 def print_pause(text):
     print(text)
     time.sleep(1.5)
@@ -49,6 +50,7 @@ class Player:
     def __init__(self):
         self.round = 1
 
+    # The strategy of always playing rock    
     def move(self, moves):
         return 'rock'
 
@@ -57,7 +59,8 @@ class Player:
 
 
 class RandomPlayer(Player):
-
+    
+    # The strategy of choosing the move randomly  
     def move(self, moves):
         return random.choice(moves)
 
@@ -94,7 +97,8 @@ class ReflectPlayer(Player):
 
 
 class CyclePlayer(Player):
-
+    
+    # The strategy of choosing the move one by one from the list ['rock', 'paper', 'scissors', 'lizard', 'spock']
     def move(self, moves):
         if self.round <= len(moves):
             return moves[self.round - 1]
@@ -137,7 +141,8 @@ class Game:
             self.round += 1
             print_pause(f"Round {self.round}:\n")
             self.play_round(moves)
-
+            
+    # Rules of beating
     def beats(self, one, two):
         return ((one == 'rock' and (two == 'scissors' or two == 'lizard')) or
                 (one == 'scissors' and (two == 'paper' or two == 'lizard')) or
