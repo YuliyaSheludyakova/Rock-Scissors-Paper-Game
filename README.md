@@ -21,6 +21,17 @@ The computer player strategies are the following (the _strategy is chosen random
 
 This project was developed through the Udacity Intro to Programming Nanodegree.
 
+## Used Programming skills
+* Foundations of Python
+  - Modules
+  - Functions
+  - `for` and `while` loops
+  - Conditional statements
+  - List and string methods
+* Object-Oriented Programming
+* Code refactoring
+* Following PEP 8 style guidelines
+
 ## Quickstart
 * Clone the project and cd into it in your terminal
 * Run `python rsp.py` or `python3 rsp.py` and follow the instruction on the screen
